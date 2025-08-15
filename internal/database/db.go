@@ -1,11 +1,11 @@
 package database
 
 import (
+	"github.com/Paya-4970/Portfolio-v.3/config"
+	"github.com/Paya-4970/Portfolio-v.3/internal/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
-	"github.com/Paya-4970/Portfolio-v.3/config"
-	"github.com/Paya-4970/Portfolio-v.3/internal"
 )
 
 var DB *gorm.DB
