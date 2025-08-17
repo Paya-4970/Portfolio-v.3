@@ -19,6 +19,8 @@ func InitDB(cfg config.Config) *gorm.DB {
 	// AutoMigrate مدل‌ها
 	if err := DB.AutoMigrate(
 		&models.Profile{},
+		&models.Shop{},
+		&models.Product{},
 	); err != nil {
 		log.Fatalf("auto migrate failed: %v", err)
 	}

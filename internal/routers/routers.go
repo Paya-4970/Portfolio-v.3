@@ -18,11 +18,13 @@ func (t *TemplateRenderer) Render(w io.Writer, name string, data interface{}, c 
 
 func InitRouter(e *echo.Echo) {
 	renderer := &TemplateRenderer{
-		templates: template.Must(template.ParseGlob("templates/*.html")),
+		templates: template.Must(template.ParseGlob("templates/**/*.html")),
 	}
 	e.Renderer = renderer
 	e.Static("/static", "static")
 	e.GET("/", handlers.HomeHandler)
+	e.GET("/products", handlers.ProductsHandle)
+	e.GET("/shops", handlers.ShopHandle)
 	e.GET("/health", func(c echo.Context) error {
 		return c.String(http.StatusOK, "OK")
 	})
